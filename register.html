@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Games Skuy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cyberpunk.css">
+</head>
+<body>
+    <div class="cyberpunk-container">
+        <div class="cyberpunk-login-box">
+            <h2>Register</h2>
+            <form action="backend/register.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="cyberpunk-btn">Register</button>
+            </form>
+            <p>Sudah punya akun? <a href="login.html" class="cyberpunk-link">Login di sini</a></p>
+        </div>
+    </div>
+</body>
+</html>

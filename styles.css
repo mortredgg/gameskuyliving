@@ -1,0 +1,297 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Font Cyberpunk */
+    background: linear-gradient(135deg, #0d0d0d, #1a1a2e, #21213b);
+    color: #fff;
+    margin: 0;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #1a1a2e;
+    border-right: 2px solid #00ffff;
+    box-shadow: 5px 0px 20px rgba(0, 255, 255, 0.5);
+    padding: 20px;
+    width: 250px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.sidebar .logo h2 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffff;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffaa;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px #00ffcc, inset 0px 0px 5px rgba(0, 255, 255, 0.5);
+}
+
+.sidebar nav ul li a.active {
+    background-color: #00ffaa;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-header {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffff;
+    text-align: center;
+}
+
+.main-header input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    background: #222;
+    color: #fff;
+}
+
+.main-header input {
+    padding: 10px;
+    border: 2px solid #00ffff; /* Border dengan warna cyberpunk */
+    border-radius: 5px;
+    width: 250px;
+    background: #1e1e2e; /* Warna gelap untuk latar belakang */
+    color: #fff;
+    font-size: 1rem;
+    text-shadow: 0 0 5px #00ffcc; /* Efek neon untuk teks */
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px #00ffff; /* Efek neon di dalam */
+}
+
+.main-header input::placeholder {
+    color: #aaa;
+    text-shadow: 0 0 5px #00ffcc; /* Efek neon untuk placeholder */
+}
+
+.main-header input:focus {
+    border-color: #00ffaa;
+    box-shadow: 0 0 10px #00ffaa, inset 0 0 10px #00ffaa;
+    transform: scale(1.05); /* Sedikit pembesaran saat fokus */
+    background: #1a1a3b; /* Sedikit lebih terang saat fokus */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero .game-card {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    height: 260px; /* Fixed card height */
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .game-card:hover {
+    border: 2px solid #00ffff;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
+    transform: translateY(-5px);
+}
+
+.hero .game-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.hero .game-card p {
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+}
+
+.hero .game-card {
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-content .close {
+    font-size: 1.5em;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+}
+
+/* Author Section */
+.author-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.author-card {
+    background-color: #222;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.author-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.author-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.author-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.author-card p {
+    color: #aaa;
+    margin: 5px 0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.hidden {
+    transform: translateX(-250px); /* Sembunyikan sidebar */
+}
+
+/* Tombol Toggle */
+.toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: -45px;
+    background-color: #00ffff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffcc;
+}
+
+.toggle-btn:hover {
+    background-color: #00ffaa;
+    transform: scale(1.1);
+}

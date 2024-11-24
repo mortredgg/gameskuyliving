@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Skuy - Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button id="toggleSidebar" class="toggle-btn">☰</button>
+            <div class="logo">
+                <img src="images/logo_web.jpg" alt="Logo Games Skuy" />
+                <h2>Games Skuy</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">🏠 Home</a></li>
+                    <li><a href="author.html">👨‍💻 Authors</a></li>
+                    <li><a href="register.html">🔒 Register</a></li>
+                    <li><a href="login.html">🔑 Login</a></li>
+                    <li><a href="backend/logout.php">🚪 Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Header -->
+            <header class="main-header">
+                <h1>Welcome to Games Skuy</h1>
+                <input type="text" id="searchBar" placeholder="Cari game..." oninput="filterGames()">
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="game-card" onclick="openGame('Snake')">
+                    <img src="images/snake_logo.png" alt="Logo Snake">
+                    <p>Snake</p>
+                </div>
+                <div class="game-card" onclick="openGame('Tebak Angka')">
+                    <img src="images/tebakangka_logo.png" alt="Logo Tebak Angka">
+                    <p>Tebak Angka</p>
+                </div>
+                <div class="game-card" onclick="openGame('Flappy Square')">
+                    <img src="images/bird.png" alt="Logo Flappy Square">
+                    <p>Flappy Bird</p>
+                </div>
+                
+                </div>
+                
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <h2 id="modalTitle">Game Title</h2>
+                <div id="gameContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
